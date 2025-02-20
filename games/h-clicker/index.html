@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>H Clicker</title>
+  <script src="/global.js" type="module"></script>
+  <link rel="stylesheet" href="/style.css"/>
+  <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZmlsbD0iYmxhY2siPgo8c3R5bGU+QGZvbnQtZmFjZXsKICBmb250LWZhbWlseTogc2FuczsKICBzcmM6IHVybCgnaHR0cHM6Ly9jZG4uZnJlZWZvbnRzdmF1bHQuY29tLzIwMjMvMDIvY29taWMtcmVndWxhci50dGYnKTsKfTwvc3R5bGU+Cjx0ZXh0IHg9IjEwIiB5PSI4NSIgc3R5bGU9ImZvbnQtZmFtaWx5OiBzYW5zLCBjdXJzaXZlOyIgZm9udC1zaXplPSIxMDAiIGZpbGw9IiMwMDAwMDAiPkg8L3RleHQ+Cjwvc3ZnPg==" type="image/svg"/>
+  <style>html {
+  height: 100%;
+  width: 100%;
+}
+@font-face{
+  font-family: sans;
+  src: url('https://cdn.freefontsvault.com/2023/02/comic-regular.ttf');
+}
+body {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-family: sans, cursive;
+}
+
+button {
+  width: 200px;
+  color-scheme: dark;
+  border: solid white 5px;      
+  border-radius: 10px;
+  color: white;
+  font-family: sans;
+  height: unset !important;
+}
+
+.up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.up > button{
+  width: 80%;
+  font-size: 2vh;
+  object-fit: cover;
+}
+
+.click {
+  width: 80%;
+
+  font-size: 5vh;
+  object-fit: cover;
+}
+
+.hide {
+  display: flex;
+  color: black;
+  background-color: black;
+  border: none;
+  position: fixed;
+  bottom:0;
+  left:0;
+  font-size: 1.5vh;
+}
+.hide>button{
+  color: black;
+  background-color: black;
+  border: 1px solid black;
+  width: fit-content;
+}
+.hide:hover {
+  color: white;
+}
+.hide>button:hover{
+  color: white;
+  background-color: gray;
+  text-align: start !important;
+}
+dialog{
+  background-color: black;
+  color: white;
+}
+.button-row{
+  display: flex;
+  flex-direction: column;
+}</style>
+</head>
+
+<body>
+  <h1>click the H button</h1>
+  <p>Clicks: <span class="h">0</span></p>
+  <p style="display:none;"class="cpsp">CPS: <span class="cps">0</span></p>
+  <button class="click" onclick="clicked()">H</button>
+  <div class="up">
+    <h3>upgrades</h3>
+    <button onclick="tinyauto()">+0.1 autoclicker (costs <span class="autocount">10</span> H clicks)</button>
+    <button onclick="addonepower()">add +1 clicking power (costs <span class="a1p">100</span> H clicks)<br>(Click Power: <span class="clickpower">1</span>)</button>
+  </div>
+  <div class="hide"><p>Secret: Tab over to the H button<br> and hold Enter for an autoclick.</p>
+  <button tabindex="-1" onclick="document.querySelector('.cheats').showModal()">cheats</button></div>
+  <dialog class="cheats">cheats menu<div class="button-row"><button onclick="setClicks()">set clicks</button><button onclick="setCPS()">set cps</button><button onclick="setClickpower()">set click power</button><form method="dialog"><button>close</button></form></div></dialog>
+  <script>var h = 0;
+var multi = 1.2;
+var clickpower = 1;
+var tinyautocost = 10;
+var addonepowercost = 100;
+var autoclicks = 0;
+var cps = 0;
+function clicked() {
+  h += clickpower;
+  update();
+}
+setInterval(function() {
+  h += autoclicks / 10;
+  update();
+}, 1000);
+function tinyauto() {
+  if (h >= tinyautocost) {
+    h = h - tinyautocost;
+    tinyautocost = Math.floor(tinyautocost * multi);
+    autoclicks++;
+    cps += 0.1;
+    document.querySelector(".cpsp").style.display="inherit";
+  } else {
+    return;
+  }
+  update();
+}
+function addonepower() {
+  if (h >= addonepowercost) {
+    h = h - addonepowercost;
+    clickpower++;
+    addonepowercost = Math.floor(addonepowercost * multi);
+    document.querySelector(".clickpower").innerHTML = clickpower;
+    update();
+  }
+  update();
+}
+function update() {
+  document.querySelector(".h").innerHTML = Number.parseFloat(h).toFixed(1).replaceAll(".0", "");
+  document.querySelector(".cps").innerHTML = Number.parseFloat(cps).toFixed(1).replaceAll(".0", "");
+  document.querySelector(".autocount").innerHTML = tinyautocost;
+  document.querySelector(".a1p").innerHTML = addonepowercost;
+}
+function setClicks(){
+  let ans = parseFloat(prompt("How many clicks?"));
+  if(isFinite(ans)){
+    h = ans;
+  }
+}
+function setCPS(){
+  let ans = parseFloat(prompt("How many CPS?"));
+  if(isFinite(ans)){
+    cps = ans;
+    autoclicks = ans * 10
+    document.querySelector(".cpsp").style.display="inherit";
+  }
+}
+function setClickpower(){
+  let ans = parseFloat(prompt("How much click power?"));
+  if(isFinite(ans)){
+    clickpower = ans;
+    document.querySelector(".clickpower").innerHTML = clickpower;
+  }
+}</script>
+
+
+</body>
+
+</html>

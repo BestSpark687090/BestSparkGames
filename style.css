@@ -1,0 +1,84 @@
+:root {
+  --border: 1px solid white;
+  --border-radius: 10px;
+  --height: 25px;
+}
+
+@font-face {
+  font-family: sans;
+  src: url('sans.ttf');
+}
+
+html {
+  height: 100%;
+  /* width: 100%; */
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-family: sans;
+  /* overflow: clip; */
+  user-select: none;
+}
+
+.back {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  /* width: 50px; */
+  height: var(--height);
+  font-family: sans;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  height: var(--height);
+  /* width: 100%; */
+}
+
+.back {
+  width: 100%;
+}
+
+.games>a {
+  display: flex;
+  /* width: 100%; */
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  /* width: 40vw; */
+  background-color: gray;
+  flex-direction: column;
+  /* create hamburber menu */
+}
+
+i {
+  font-size: 200%;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.left>i {
+  position:relative;
+  display: flex;
+  top: 10px;
+  left: 10px;
+  justify-content: left;
+  /* z-index: 10; */
+}
