@@ -1,0 +1,26 @@
+#arrows{
+  transform: translate(-10px, 5px);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+#arrows>i{
+  font-size: 5em !important;
+  height: 0.7em;
+}
+#keys>button{
+  width: 5em;
+  /* border-radius: 0px;
+  border:none; */
+  height:25px;
+}
+#keys>button{
+ width:5em; 
+}
+#keys>button:hover{
+  background-color: purple;
+}
+#keys{
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Stuff</title>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <link href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css" rel="stylesheet" type="text/css"/>
+  <link href="arrows.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <h1>Arrow Stuff</h1>
+  <h2>press the keys under the arrows to ... do nothing.</h2>
+  <div id="arrows">
+    <i class="fa-duotone fa-regular fa-left fa-2xl" id="arrow1" 
+      style="
+        --fa-primary-color: white;
+        --fa-secondary-color: purple; 
+        --fa-secondary-opacity: 0.25;
+    "></i>
+    <i class="fa-duotone fa-regular fa-down fa-2xl" id="arrow2" 
+      style="
+        --fa-primary-color: white;
+        --fa-secondary-color: blue; 
+        --fa-secondary-opacity: 0.25;
+    "></i>
+    <i class="fa-duotone fa-regular fa-up fa-2xl" id="arrow3" 
+      style="
+        --fa-primary-color: white;
+        --fa-secondary-color: green; 
+        --fa-secondary-opacity: 0.25;
+    "></i>
+    <i class="fa-duotone fa-regular fa-right fa-2xl" id="arrow4" 
+      style="
+        --fa-primary-color: white;
+        --fa-secondary-color: red;
+        --fa-secondary-opacity: 0.25;
+    "></i>
+  </div>
+  <div id="keys">
+    <button id="pressButton" class="press1">Press</button>
+    <button id="pressButton" class="press2">Press</button>
+    <button id="pressButton" class="press3">Press</button>
+    <button id="pressButton" class="press4">Press</button>
+  </div>
+  <script src="script.js"></script>
+  <script src="/global.js" type="module"></script>
+</body>
+
+</html>

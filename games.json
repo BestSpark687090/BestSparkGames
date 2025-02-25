@@ -2,11 +2,13 @@
   "games":[
     "clicker",
     "keyboard",
-    "h-clicker"
+    "h-clicker",
+    "arrows"
   ],
   "names":[
     "Clicker Game",
     "Keyboard Spammer",
-    "H Clicker"
+    "H Clicker",
+    "Arrows"
   ]
 }
