@@ -60,7 +60,7 @@ if (location.pathname == "/") { // main page, add games list
     menu.animate(
       //[{ left: CSS.percent(0) }, { left: CSS.percent(-100)}],
       [{ left: 0 }, { left: CSS.px(-width) }],
-      { duration: 500, fill: "forwards", easing: "ease-in-out"}
+      { duration: 500, fill: "forwards", easing: "ease-in-out" }
     );
     // setTimeout(function() {
     //   menu.style.display = "none"
@@ -83,7 +83,7 @@ if (location.pathname == "/") { // main page, add games list
   }
   document.body.appendChild(menu)
   let width = menu.offsetWidth
-  menu.style.left = (-width-15)+"px"
+  menu.style.left = (-width - 15) + "px"
 }
 function test() {
   alert("aaa")

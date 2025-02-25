@@ -75,7 +75,7 @@ i {
 }
 
 .left>i {
-  position:relative;
+  position: relative;
   display: flex;
   top: 10px;
   left: 10px;

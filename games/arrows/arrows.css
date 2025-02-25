@@ -1,28 +1,33 @@
-#arrows{
+#arrows {
   transform: translate(-10px, 5px);
   display: flex;
   justify-content: center;
   align-items: stretch;
 }
-#arrows>i{
+
+#arrows>i {
   font-size: 5em !important;
   height: 0.7em;
   --default-opacity: 0.5;
   --fa-secondary-opacity: 0.5;
 }
-#keys>button{
+
+#keys>button {
   width: 5em;
   /* border-radius: 0px;
   border:none; */
-  height:25px;
+  height: 25px;
 }
-#keys>button{
- width:5em; 
+
+#keys>button {
+  width: 5em;
 }
-#keys>button:hover{
+
+#keys>button:hover {
   background-color: purple;
 }
-#keys{
+
+#keys {
   display: flex;
   justify-content: center;
 }
