@@ -1,7 +1,11 @@
-let keys = ["", "", "", ""]
+let keys = ["d", "f", "j", "k"]
 let keysPressed = [false,false,false,false]
 let alreadyWaiting = false;
-document.querySelectorAll("#pressButton").forEach(function(e){
+document.querySelectorAll("#pressButton").forEach(function(e,i){
+  if(keys[i]!=""){
+    e.innerHTML = keys[i];
+  }
+  // Press function
   function press(ev) {
     if (alreadyWaiting) {
       return;
@@ -21,8 +25,12 @@ document.querySelectorAll("#pressButton").forEach(function(e){
     // check for event listener because it doesnt remove sometimes
     // nah it doesnt click right that's all
   }
-  e.onpointerdown = press;
+  // e.onpointerdown = press;
+  e.addEventListener("click", press);
+
+
 })
+
 // the key maker
 function key(e){
   // keysPressed = [false,false,false,false]
