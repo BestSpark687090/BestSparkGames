@@ -57,16 +57,17 @@ function key(e){
   // }
   // then the hacky part
   // i in is the index so it makes it easier to type
-  let defaultOpacity = 0.25
+  // let defaultOpacity = 0.25
+  // figure out an easier way to get the opacity
+  
   for(let i=0;i<4;i++){
-    let el = document.querySelector("#arrow"+(i+1)).style.cssText
+    let arrow = document.querySelector("#arrow"+(i+1))
+    let defaultOpacity = window.getComputedStyle(arrow).getPropertyValue('--default-opacity')
     if(keysPressed[i]){ 
-      el = el.replaceAll(`y: ${defaultOpacity};`,"y: 1;")
+      arrow.style.setProperty('--fa-secondary-opacity', '1');
     }else{
-
-      el = el.replaceAll("y: 1;",`y: ${defaultOpacity};`)
+      arrow.style.setProperty('--fa-secondary-opacity', defaultOpacity);
     }
-    document.querySelector("#arrow"+(i+1)).style.cssText = el
   }
 }
 document.addEventListener("keydown", key)

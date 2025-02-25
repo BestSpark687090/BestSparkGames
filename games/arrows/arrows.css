@@ -7,6 +7,8 @@
 #arrows>i{
   font-size: 5em !important;
   height: 0.7em;
+  --default-opacity: 0.5;
+  --fa-secondary-opacity: 0.5;
 }
 #keys>button{
   width: 5em;
