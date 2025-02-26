@@ -82,3 +82,7 @@ i {
   justify-content: left;
   /* z-index: 10; */
 }
+.left{
+  /* position: relative; */
+  left:100%;
+}

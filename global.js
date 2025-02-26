@@ -22,8 +22,7 @@ if (location.pathname == "/") { // main page, add games list
   document.body.appendChild(a)
   let menu = document.createElement("div");
   menu.classList.add("menu")
-  // menu.hidden = true;
-  // menu.style.display = "none"
+  menu.hidden = true;
   let link = document.createElement("link");
   link.rel = "stylesheet"
   link.href = "https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css";
@@ -34,12 +33,10 @@ if (location.pathname == "/") { // main page, add games list
     let width = menu.offsetWidth
     menu.style.display = "flex"
     menu.animate(
-      //[{ left: CSS.percent(-100) }, { left: CSS.percent(0)  }],
-      [{ left: CSS.px(-width) }, { left: 0 }],
+      [{ left: CSS.px(-width-1) }, { left: 0 }],
       { duration: 500, fill: "forwards", easing: "ease-in-out" }
     );
     console.log("menu")
-    // i2.style.display = ""
   }
   document.body.appendChild(i);
   let div = document.createElement("div");
@@ -47,28 +44,16 @@ if (location.pathname == "/") { // main page, add games list
   menu.appendChild(div)
   let i2 = document.createElement("i");
   i2.classList.add("fa-solid", "fa-xmark");
-  // i2.onclick = function(){
-  //   menu.style.display = "none"
-  //   i.style.display = "none"
-  // }
   div.appendChild(i2)
   menu.innerHTML += "<br>"
   menu.querySelector(".fa-xmark").addEventListener("click", function() {
     let width = menu.offsetWidth
     console.log("close")
-    // menu.animate([{width: "40vw"},{width: "0vw"}],{duration: 2000});
     menu.animate(
-      //[{ left: CSS.percent(0) }, { left: CSS.percent(-100)}],
-      [{ left: 0 }, { left: CSS.px(-width) }],
+      [{ left: 0 }, { left: CSS.px(-width-1) }],
       { duration: 500, fill: "forwards", easing: "ease-in-out" }
     );
-    // setTimeout(function() {
-    //   menu.style.display = "none"
-    // }, 500)
-    // menu.style.display = "none"
-    // document.querySelector(".fa-xmark").style. = "none"
   })
-
   // list making
   let file = await fetch("/games.json");
   let jsonText = await file.text();
@@ -83,7 +68,7 @@ if (location.pathname == "/") { // main page, add games list
   }
   document.body.appendChild(menu)
   let width = menu.offsetWidth
-  menu.style.left = (-width - 15) + "px"
+  menu.style.left = (-width - 17) + "px"
 }
 function test() {
   alert("aaa")

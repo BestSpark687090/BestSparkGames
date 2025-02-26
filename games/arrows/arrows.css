@@ -8,8 +8,8 @@
 #arrows>i {
   font-size: 5em !important;
   height: 0.7em;
-  --default-opacity: 0.5;
-  --fa-secondary-opacity: 0.5;
+  --default-opacity: 0.25;
+  --fa-secondary-opacity: var(--default-opacity);
 }
 
 #keys>button {
