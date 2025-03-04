@@ -32,7 +32,7 @@ document.querySelectorAll("#pressButton").forEach(function(e, i) {
 function key(e) {
   // im sorry but im gonna use eval. hear me out.
   for (let i = 0; i < 4; i++) {
-    eval(`if(e.key==keys[${i}]){keysPressed[${i}]= true}`)
+    eval(`if(e.key==keys[${i}]){keysPressed[${i}]=true}`)
     if (e.type == "keyup" && e.key == keys[i]) {
       keysPressed[i] = false
     }
@@ -50,3 +50,22 @@ function key(e) {
 }
 document.addEventListener("keydown", key)
 document.addEventListener("keyup", key)
+document.querySelectorAll(".fa-duotone").forEach(function(e,i,a){
+  // add click event to arrows, funni?
+  function globalEvent(ev){
+    let key = keys[i]
+    if (key!=""){
+      document.dispatchEvent(new KeyboardEvent(
+        ev.type
+          .replaceAll(/(mouse|touch)/g,"key")
+          .replaceAll("start","down")
+          .replaceAll("end","up")
+        , {key: key})
+      )
+    }
+  }
+  e.addEventListener("mousedown",globalEvent)
+  e.addEventListener("mouseup",globalEvent)
+  e.addEventListener("touchstart",globalEvent)
+  e.addEventListener("touchend",globalEvent)
+})

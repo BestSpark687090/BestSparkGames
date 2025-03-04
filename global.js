@@ -1,5 +1,4 @@
 if (location.pathname == "/") { // main page, add games list
-  console.log(location.pathname)
   let games = document.querySelector(".games")
   // fetch json file games.json
   let file = await fetch("/games.json");
