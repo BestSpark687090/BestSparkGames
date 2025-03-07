@@ -13,14 +13,13 @@
 }
 
 #keys>button {
-  width: 5em;
   /* border-radius: 0px;
   border:none; */
   height: 25px;
 }
 
 #keys>button {
-  width: 5em;
+  width: 5em !important;
 }
 
 #keys>button:hover {

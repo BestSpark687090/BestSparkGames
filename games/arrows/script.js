@@ -1,9 +1,10 @@
 let keys = ["d", "f", "j", "k"]
 let keysPressed = [false, false, false, false]
 let alreadyWaiting = false;
-document.querySelectorAll("#pressButton").forEach(function(e, i) {
-  if (keys[i] != "") {
-    e.innerHTML = keys[i];
+let autoBind = true;
+document.querySelectorAll("#pressButton").forEach(function(e, ind) {
+  if (keys[ind] != "") {
+    e.innerHTML = keys[ind];
   }
   // Press function
   function press(ev) {
@@ -12,18 +13,26 @@ document.querySelectorAll("#pressButton").forEach(function(e, i) {
     }
     alreadyWaiting = true;
     // wait for press
+    document.addEventListener("keydown", setKey);
     ev.target.innerHTML = "Press a key...";
     function setKey(e) {
       // if(!alreadyWaiting){return}
-      i = parseInt(ev.target.getAttribute("class").replace("press", ""))
+      let i = parseInt(ev.target.getAttribute("class").replace("press", ""))
+      if(i==4){
+        autoBind = false
+      }
       keys[i - 1] = e.key;
       ev.target.innerHTML = e.key;
       alreadyWaiting = false;
-      ev.target.removeEventListener("keydown", setKey);
+      document.removeEventListener("keydown", setKey);
+      if(autoBind){
+        document.querySelector(".press"+(i+1)).click()
+      }
     }
-    ev.target.addEventListener("keydown", setKey);
+
     // check for event listener because it doesnt remove sometimes
     // nah it doesnt click right that's all
+    
   }
   // e.onpointerdown = press;
   e.addEventListener("click", press);
