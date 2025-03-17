@@ -67,7 +67,7 @@ a {
   /* create hamburber menu */
 }
 
-i {
+.menuButton {
   font-size: 200%;
   position: fixed;
   top: 10px;

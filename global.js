@@ -27,7 +27,7 @@ if (location.pathname == "/") { // main page, add games list
   link.href = "https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css";
   document.body.appendChild(link);
   let i = document.createElement("i");
-  i.classList.add("fa-solid", "fa-bars");
+  i.classList.add("fa-solid", "fa-bars","menuButton");
   i.onclick = function() {
     let width = menu.offsetWidth
     menu.style.display = "flex"
@@ -42,7 +42,7 @@ if (location.pathname == "/") { // main page, add games list
   div.classList.add("left");
   menu.appendChild(div)
   let i2 = document.createElement("i");
-  i2.classList.add("fa-solid", "fa-xmark");
+  i2.classList.add("fa-solid", "fa-xmark","menuButton");
   div.appendChild(i2)
   menu.innerHTML += "<br>"
   menu.querySelector(".fa-xmark").addEventListener("click", function() {
