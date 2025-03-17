@@ -1,32 +1,21 @@
 #arrows {
-  /* transform: translate(-10px, 5px); */
   display: flex;
   justify-content: center;
-  /* justify-items: center; */
   align-items: center;
-  /* position: relative; */
-  /* left: -10px;
-  top: 10px; */
 }
 
 #arrows>i {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   font-size: 5em !important;
   height: 1em;
   --default-opacity: 0.25;
   --fa-secondary-opacity: var(--default-opacity);
-  /* --fa-rotate-angle: 90deg; */
   position: relative;
   left: 0;
-  /* top: 20px; */
-  /* width: 5em; */
 }
 
 #keys>button {
-  /* border-radius: 0px;
-  border:none; */
   height: 25px;
 }
 
