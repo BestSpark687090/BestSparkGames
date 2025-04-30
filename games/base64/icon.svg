@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 100 100" fill="black">
+<style>@font-face{
+  font-family: sans;
+  src: url('https://cdn.freefontsvault.com/2023/02/comic-regular.ttf');
+}</style>
+<text x="19" y="85" style="font-family: sans, cursive;" font-size="100" fill="#000000">B</text>
+<text x="42" y="40" font-size="25" fill="black" style="font-family: sans, cursive;">6</text>
+  <text x="42" y="75" font-size="23" fill="black" style="font-family: sans, cursive;">4</text>
+</svg>

@@ -1,0 +1,19 @@
+Normal Buttons are 0 and 1
+Others are 0-1
+Button 0 - B 
+Button 1 - A 
+Button 2 - Y 
+Button 3 - X 
+Button 4 - L 
+Button 5 - R 
+Button 6 - L2
+Button 7 - R2
+Button 8 - Select
+Button 9 - Start
+Button 10 - Left Stick Click
+Button 11 - Right Stick Click
+Button 12 - DPad Up
+Button 13 - DPad Down
+Button 14 - DPad Left
+Button 15 - DPad Right
+Button 16 - Xbox Button/8bitdo Button
