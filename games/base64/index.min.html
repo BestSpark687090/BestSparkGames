@@ -1,1 +1,126 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Base64 Maker</title><style>:root{--border:1px solid white;--border-radius:10px;--height:25px}@font-face{font-family:sans;src:url(sans.ttf)}html{height:100%;background-color:#000;color:#fff;text-align:center;font-family:sans;user-select:none}.back{position:fixed;bottom:0;right:0}button{background-color:#000;color:#fff;border:var(--border);border-radius:var(--border-radius);height:var(--height);font-family:sans}a{text-decoration:none;color:inherit;border:var(--border);border-radius:var(--border-radius);height:var(--height)}.back{width:100%}.games>a{display:flex;justify-content:center}.menu{display:flex;position:fixed;top:0;left:0;height:100%;background-color:gray;flex-direction:column}i{font-size:200%;position:fixed;top:10px;left:10px}.left>i{position:relative;display:flex;top:10px;left:10px;justify-content:left}</style><style>body{display:flex;justify-content:center;align-items:center;flex-direction:column}textarea{width:100%;height:90vh;background-color:#000;color:#fff}</style></head><body><textarea></textarea><button onclick="change()">make base64</button><script>function change(){let e=document.querySelector("textarea");e.value="data:text/html;base64,"+btoa(e.value)}</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base64 Maker</title>
+  <style>:root {
+    --border: 1px solid white;
+    --border-radius: 10px;
+    --height: 25px;
+  }
+
+  @font-face {
+    font-family: sans;
+    src: url('sans.ttf');
+  }
+
+  html {
+    height: 100%;
+    /* width: 100%; */
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: sans;
+    /* overflow: clip; */
+    user-select: none;
+  }
+
+  .back {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+
+  button {
+    background-color: black;
+    color: white;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    /* width: 50px; */
+    height: var(--height);
+    font-family: sans;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    height: var(--height);
+    /* width: 100%; */
+  }
+
+  .back {
+    width: 100%;
+  }
+
+  .games>a {
+    display: flex;
+    /* width: 100%; */
+    justify-content: center;
+  }
+
+  .menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    /* width: 40vw; */
+    background-color: gray;
+    flex-direction: column;
+    /* create hamburber menu */
+  }
+
+  .menuButton {
+    font-size: 200%;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+  }
+
+  .left>i {
+    position: relative;
+    display: flex;
+    top: 10px;
+    left: 10px;
+    justify-content: left;
+    /* z-index: 10; */
+  }
+  .left{
+    /* position: relative; */
+    left:100%;
+  }</style>
+  <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZmlsbD0id2hpdGUiPgo8c3R5bGU+QGZvbnQtZmFjZXsKICBmb250LWZhbWlseTogc2FuczsKICBzcmM6IHVybCgnaHR0cHM6Ly9jZG4uZnJlZWZvbnRzdmF1bHQuY29tLzIwMjMvMDIvY29taWMtcmVndWxhci50dGYnKTsKfTwvc3R5bGU+Cjx0ZXh0IHg9IjE5IiB5PSI4NSIgc3R5bGU9ImZvbnQtZmFtaWx5OiBzYW5zLCBjdXJzaXZlOyIgZm9udC1zaXplPSIxMDAiIGZpbGw9IndoaXRlIj5CPC90ZXh0Pgo8dGV4dCB4PSI0MiIgeT0iNDAiIGZvbnQtc2l6ZT0iMjUiIGZpbGw9IndoaXRlIiBzdHlsZT0iZm9udC1mYW1pbHk6IHNhbnMsIGN1cnNpdmU7Ij42PC90ZXh0PgogIDx0ZXh0IHg9IjQyIiB5PSI3NSIgZm9udC1zaXplPSIyMyIgZmlsbD0id2hpdGUiIHN0eWxlPSJmb250LWZhbWlseTogc2FucywgY3Vyc2l2ZTsiPjQ8L3RleHQ+Cjwvc3ZnPg==" type="image/svg" />
+  <style>
+    @font-face{
+      font-family: sans;
+      src: url('https://cdn.freefontsvault.com/2023/02/comic-regular.ttf');
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    textarea {
+      width: 100%;
+      height: 90vh;
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- html, will be replaced -->
+  <textarea></textarea>
+  <button onclick="change()">make base64</button>
+  <script>function change(){let text=document.querySelector("textarea");text.value = "data:text/html;base64," + btoa(text.value);}</script>
+</body>
+
+</html>

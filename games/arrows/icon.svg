@@ -2,7 +2,7 @@
   <style>@font-face{
     font-family: fa;
     src: url("https://site-assets.fontawesome.com/releases/v6.7.2/webfonts/fa-duotone-regular-400.woff2") format('woff2');
-  }</style><text x="0" y="12" fill="black" style="
+  }</style><text x="0" y="12" fill="white" style="
       --fa-primary-color: white;
       --fa-secondary-color: purple; 
       font-family: fa,cursive;
